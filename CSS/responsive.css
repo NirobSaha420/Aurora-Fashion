@@ -1,0 +1,23 @@
+/* for small devices, mobile */
+@media (max-width: 425px){
+    .nav-contents .brand span{
+        font-size: 3vw;
+    }
+    .nav-contents .nav-con2 .nav-links ul li{
+        margin-right: 4vw;
+        & > a{
+            font-size: 2.5vw;
+        }
+    }
+    .nav-contents .nav-con3 .cart{
+        & > span{
+            font-size: 2.7vw;
+        }
+        & > a{
+            font-size: 2.5vw;
+        }
+    }
+    .nav-contents .nav-con3 .help a{
+        font-size: 2.6vw;
+    }
+}
