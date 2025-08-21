@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Form</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="Image/webp" href="./images/Aurora-black.jpg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-black: #000;
+            --color-white: #fff;
+            --color-theme1: #A16D28;
+            --color-theme2: #eee;
+            --color-light-gray: #f5f5f5;
+            --color-border: #ddd;
+            --color-success: #28a745;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --border-radius: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f9f9f9, #f0f0f0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--color-black);
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: var(--color-theme1);
+            color: var(--color-white);
+            padding: 25px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            left: -40px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header p {
+            text-transform: capitalize;
+            opacity: 0.9;
+            font-size: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .checkout-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .form-section {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            background: var(--color-white);
+        }
+
+        .order-summary {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            background: var(--color-theme2);
+            border-left: 1px solid var(--color-border);
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--color-black);
+            position: relative;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--color-theme1);
+        }
+
+        .section-title i {
+            margin-right: 10px;
+            color: var(--color-theme1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--color-black);
+            display: flex;
+            align-items: center;
+        }
+
+        label i {
+            margin-right: 10px;
+            color: var(--color-theme1);
+            width: 20px;
+            text-align: center;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px 14px 14px 40px;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background-color: var(--color-light-gray);
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--color-theme1);
+            box-shadow: 0 0 0 3px rgba(161, 109, 40, 0.2);
+        }
+
+        .input-icon {
+            position: relative;
+        }
+
+        .input-icon i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+        }
+
+        .payment-options {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .payment-option {
+            flex: 1;
+            min-width: 80px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .payment-option:hover {
+            transform: translateY(-5px);
+        }
+
+        .payment-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-white);
+            border: 2px solid var(--color-border);
+            transition: all 0.3s;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+
+        .payment-option.active .payment-icon {
+            background: rgba(161, 109, 40, 0.1);
+            border-color: var(--color-theme1);
+            transform: scale(1.05);
+        }
+
+        .payment-option i {
+            font-size: 32px;
+            color: #555;
+        }
+
+        .payment-option.active i {
+            color: var(--color-theme1);
+        }
+
+        .payment-label {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .order-item {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .order-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+            background: linear-gradient(45deg, #A16D28, #d4a76a);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            & > img{
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .order-details {
+            flex: 1;
+        }
+
+        .order-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .order-price {
+            color: var(--color-theme1);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .order-specs {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .quantity-section {
+            margin: 25px 0;
+            padding: 20px;
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .quantity-label {
+            font-weight: 500;
+            color: var(--color-black);
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 150px;
+            background: var(--color-white);
+        }
+
+        .quantity-btn {
+            background: var(--color-theme2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity-btn:hover {
+            background: var(--color-theme1);
+            color: var(--color-white);
+        }
+
+        .quantity-input {
+            flex: 1;
+            text-align: center;
+            border: none;
+            border-left: 1px solid var(--color-border);
+            border-right: 1px solid var(--color-border);
+            padding: 0;
+            height: 40px;
+            font-weight: 600;
+            background: var(--color-white);
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 12px 0;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed var(--color-border);
+            font-size: 0.95rem;
+        }
+
+        .summary-total {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 20px 0;
+            color: var(--color-black);
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-top: 2px solid var(--color-border);
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        .summary-total .amount {
+            color: var(--color-theme1);
+            font-size: 1.4rem;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--color-theme1);
+            color: var(--color-white);
+            box-shadow: 0 4px 12px rgba(161, 109, 40, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #8a5d23;
+            box-shadow: 0 6px 15px rgba(161, 109, 40, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .secure-checkout {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .secure-checkout i {
+            margin-right: 8px;
+            color: var(--color-success);
+        }
+
+        .payment-details {
+            background: var(--color-white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            .checkout-container {
+                flex-direction: column;
+            }
+            
+            .order-summary {
+                border-left: none;
+                border-top: 1px solid var(--color-border);
+            }
+            
+            .payment-options {
+                gap: 10px;
+            }
+            
+            .payment-option {
+                min-width: 70px;
+            }
+            
+            .payment-icon {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .form-section, .order-summary {
+                padding: 20px;
+            }
+            
+            .payment-option {
+                min-width: 60px;
+            }
+            
+            .payment-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .payment-option i {
+                font-size: 24px;
+            }
+            
+            .quantity-control {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .quantity-selector {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="preloader"></div>
+
+    <div class="container">
+        <header>
+            <h1>Check-out</h1>
+            <p>Simplify your daily life</p>
+        </header>
+        
+        <div class="checkout-container">
+            <div class="form-section">
+                <h2 class="section-title"><i class="fas fa-user"></i> Personal Information</h2>
+                
+                <div class="form-group">
+                    <label for="name"><i class="fas fa-signature"></i> Full Name</label>
+                    <div class="input-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="name" placeholder="John Doe">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                    <div class="input-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" placeholder="john@example.com">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="location"><i class="fas fa-map-marker-alt"></i> Delivery Location</label>
+                    <div class="input-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <select id="location">
+                            <option value="">Select your area</option>
+                            <option value="dhaka">Dhaka</option>
+                            <option value="chittagong">Chittagong</option>
+                            <option value="khulna">Khulna</option>
+                            <option value="sylhet">Sylhet</option>
+                            <option value="barisal">Barisal</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <h2 class="section-title"><i class="fas fa-credit-card"></i> Payment Method</h2>
+                
+                <div class="payment-options">
+                    <div class="payment-option active">
+                        <div class="payment-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="payment-label">Card</div>
+                    </div>
+                    
+                    <div class="payment-option">
+                        <div class="payment-icon">
+                            <i class="fab fa-paypal"></i>
+                        </div>
+                        <div class="payment-label">PayPal</div>
+                    </div>
+                    
+                    <div class="payment-option">
+                        <div class="payment-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="payment-label">bKash</div>
+                    </div>
+                    
+                    <div class="payment-option">
+                        <div class="payment-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="payment-label">Nagad</div>
+                    </div>
+                </div>
+                
+                <div class="payment-details">
+                    <div class="form-group">
+                        <label for="card-number"><i class="fas fa-credit-card"></i> Card Number</label>
+                        <div class="input-icon">
+                            <i class="fas fa-credit-card"></i>
+                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" style="display: flex; gap: 15px;">
+                        <div style="flex: 1;">
+                            <label for="expiry"><i class="fas fa-calendar"></i> Expiry Date</label>
+                            <div class="input-icon">
+                                <i class="fas fa-calendar"></i>
+                                <input type="text" id="expiry" placeholder="MM/YY">
+                            </div>
+                        </div>
+                        <div style="flex: 1;">
+                            <label for="cvv"><i class="fas fa-lock"></i> CVV</label>
+                            <div class="input-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="text" id="cvv" placeholder="123">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="order-summary">
+                <h2 class="section-title"><i class="fas fa-shopping-bag"></i> Order Summary</h2>
+                
+                <div class="order-item">
+                    <div class="order-img">
+                        <img src="./images/product-watch.avif" alt="product" loading="lazy">
+                    </div>
+                    <div class="order-details">
+                        <div class="order-title">Solid Black Watch</div>
+                        <div class="order-price">$149.99</div>
+                        <div class="order-specs">Color: Black | Waterproof</div>
+                    </div>
+                </div>
+                
+                <div class="quantity-section">
+                    <div class="quantity-control">
+                        <div class="quantity-label">Quantity</div>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" id="quantity" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>$149.99</span>
+                </div>
+                
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>$5.99</span>
+                </div>
+                
+                <div class="summary-row">
+                    <span>Tax</span>
+                    <span>$9.00</span>
+                </div>
+                
+                <div class="summary-row">
+                    <span>Discount</span>
+                    <span style="color: var(--color-success);">-$15.00</span>
+                </div>
+                
+                <div class="summary-total">
+                    <span>Total</span>
+                    <span class="amount">$149.98</span>
+                </div>
+                
+                <button class="btn btn-primary">Complete Purchase</button>
+                
+                <div class="secure-checkout">
+                    <i class="fas fa-lock"></i>
+                    <span>Your payment details are securely encrypted</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Quantity selector
+            const minusBtn = document.querySelector('.minus');
+            const plusBtn = document.querySelector('.plus');
+            const quantityInput = document.getElementById('quantity');
+            
+            minusBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                let currentVal = parseInt(quantityInput.value);
+                if (currentVal > 1) {
+                    quantityInput.value = currentVal - 1;
+                    updateOrderSummary(currentVal - 1);
+                }
+            });
+            
+            plusBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                let currentVal = parseInt(quantityInput.value);
+                quantityInput.value = currentVal + 1;
+                updateOrderSummary(currentVal + 1);
+            });
+            
+            // Payment option selection
+            const paymentOptions = document.querySelectorAll('.payment-option');
+            
+            paymentOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    paymentOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Update order summary based on quantity
+            function updateOrderSummary(qty) {
+                const subtotal = 149.99 * qty;
+                const discount = 15.00 * qty;
+                const total = subtotal + 5.99 + 9.00 - discount;
+                
+                document.querySelector('.summary-row:nth-child(1) span:last-child').textContent = '$' + subtotal.toFixed(2);
+                document.querySelector('.summary-row:nth-child(4) span:last-child').textContent = '-$' + discount.toFixed(2);
+                document.querySelector('.summary-total .amount').textContent = '$' + total.toFixed(2);
+            }
+        });
+
+      var loader = document.getElementById("preloader")
+
+      window.addEventListener("load", function(){
+        loader.style.display = "none";
+      })
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Overview</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="Image/webp" href="./images/Aurora-black.jpg">
+
+    <!-- Bootstrap css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <!-- Shery css -->
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom css links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./CSS/product.css">
+    <link rel="stylesheet" href="./CSS/responsive.css">
+</head>
+<body>
+
+
+  <div id="preloader"></div>
+
+    <!-- navbar -->
+    <nav id="nav">
+        <div class="container">
+          <div class="nav-contents">
+            <div class="col-lg-4 nav-con1">
+              <div class="brand">
+                <span class="magnet">Aurora.</span>
+              </div>
+            </div>
+            <div class="col-lg-4 nav-con2">
+              <div class="nav-links">
+                <ul>
+                  <li>
+                    <a href="./index.html">Home</a>
+                  </li>
+                  <li>
+                    <a href="./index.html">Men</a>
+                  </li>
+                  <li>
+                    <a href="./index.html">Accesories</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 nav-con3">
+              <div class="cart">
+                <span>
+                  <a href="./form.html" target="_blank"><i class="fa-solid fa-cart-shopping magnet"></i></a>
+                </span>
+              </div>
+              <a class="magnet help-a" href="#">Help</a> <!--faq link-->
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- navbar -->
+
+      <!-- ad -->
+     <section id="ad">
+        <div class="row">
+          <div class="col-lg-12">
+            <h4>No Delivery Charge on 3+ products</h4>
+          </div>
+        </div>
+      </div>
+     </section>
+    <!-- ad -->
+
+    <section id="main">
+        <div class="row">
+            <div class="container">
+                <div class="product-container">
+                    <div class="product-gallery">
+                        <div class="main-image">
+                            <img id="main-product-img" src="./images/product-belt.avif" alt="product" loading="eager">
+                        </div>
+                        <div class="thumbnail-container">
+                            <div class="thumbnail active">
+                                <img src="./images/Aurora-black.avif" alt="Front view" loading="lazy">
+                            </div>
+                            <div class="thumbnail">
+                                <img src="./images/Aurora-black.avif" alt="Side view" loading="lazy">
+                            </div>
+                            <div class="thumbnail">
+                                <img src="./images/Aurora-black.avif" alt="Back view" loading="lazy">
+                            </div>
+                            <div class="thumbnail">
+                                <img src="./images/Aurora-black.avif" alt="Top view" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <div class="heading">
+                          <h1 class="product-title">Solid Plain Belt</h1>
+                          <a href="./index.html"><span><i class="fa-solid fa-xmark"></i></span></a>
+                        </div>
+                        <div class="product-price">$129.99</div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="rating-count">(21 reviews)</div>
+                        </div>
+                        <p class="product-description">
+                            Experience ultimate comfort with our premium cotton t-shirts. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nostrum optio nam ducimus officia molestiae nulla culpa ab rerum laudantium molestias, iusto sapiente totam praesentium! Nam nobis voluptatibus quasi possimus?
+                        </p>
+                        
+                        <div class="options-section">
+                            <h3 class="section-title">Select Color:</h3>
+                            <div class="color-options">
+                                <div class="color-option active" style="background-color: #000;" data-color="Black"></div>
+                                <div class="color-option" style="background-color: #0e1764;" data-color="Navy"></div>
+                                <div class="color-option" style="background-color: #858585;" data-color="Grey"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="options-section">
+                            <h3 class="section-title">Select Size:</h3>
+                            <div class="size-options">
+                                <div class="size-option">XS</div>
+                                <div class="size-option">S</div>
+                                <div class="size-option active">M</div>
+                                <div class="size-option">L</div>
+                                <div class="size-option">XL</div>
+                            </div>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="add-to-cart magnet">
+                                <i class="fas fa-shopping-cart"></i>
+                                <a href="./form.html">Add to Cart</a>
+                            </button>
+                            <button class="wishlist magnet">
+                                <i class="fas fa-heart"></i>
+                                Wishlist
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <Section id="description">
+                    <hr>
+                    <div class="row">
+                        <div class="container">
+                            <div class="col-lg-12">
+                                <div class="des-contents">
+                                    <h4>Product Details - </h4>
+                                    <div class="details">
+                                        <ul>
+                                            <li>Product Type : Waist Belt</li>
+                                            <li>Style : Formal</li>
+                                            <li>Gender : Male</li>
+                                        </ul>
+                                        <ul>
+                                            <li>Size: 1.3M</li>
+                                            <li>Material: Leather</li>
+                                            <li>Width: 1.5 inch</li>
+                                        </ul>
+                                        <div class="empty"></div>
+                                        <div class="empty"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </Section>
+                
+                <div class="related-products">
+                    <div class="section-header">
+                        <h2 class="section-heading">You Might Also Like - </h2>
+                        <a href="./index.html" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                    
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <div class="card-image">
+                                <a href="./index.html"><img src="./images/product-watch.avif" alt="product" loading="lazy"></a>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Watch</h3>
+                                <div class="card-price">$99.99</div>
+                                <div class="card-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="card-action">
+                                    <button class="card-button add-to-cart-btn magnet">Add to Cart</button>
+                                    <button class="card-button wishlist-btn magnet"><i class="fas fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="card-image">
+                                <a href="./index.html"><img src="./images/t-shirt.avif" alt="product" loading="lazy"></a>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">T-shirt</h3>
+                                <div class="card-price">$89.99</div>
+                                <div class="card-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="card-action">
+                                    <button class="card-button add-to-cart-btn magnet">Add to Cart</button>
+                                    <button class="card-button wishlist-btn magnet"><i class="fas fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="card-image">
+                                <a href="./index.html"><img src="./images/white-shirt-plain.avif" alt="product" loading="lazy"></a>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">White Full-Sleve Shirt</h3>
+                                <div class="card-price">$119.99</div>
+                                <div class="card-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="card-action">
+                                    <button class="card-button add-to-cart-btn magnet">Add to Cart</button>
+                                    <button class="card-button wishlist-btn magnet"><i class="fas fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="card-image">
+                                <a href="./index.html"><img src="./images/product-belt.avif" alt="product" loading="lazy"></a>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Men Belt</h3>
+                                <div class="card-price">$109.99</div>
+                                <div class="card-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="card-action">
+                                    <button class="card-button add-to-cart-btn magnet">Add to Cart</button>
+                                    <button class="card-button wishlist-btn magnet"><i class="fas fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- footer -->
+    <section id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="footer-contents">
+                <div class="img">
+                  <img src="./images/Aurora-white-font-bg.png" loading="lazy" alt="Logo">
+                </div>
+                <p>We believe everyday luxury comes through simplicity.</p>
+              </div>
+            </div>
+            <div class="col-lg-3 width50">
+              <div class="footer-contents">
+                <h4>Quick links</h4>
+                <div class="navs">
+                  <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./index.html">Men</a></li>
+                    <li><a href="./index.html">Accesories</a></li>
+                    <li>Details : </li>
+                    <ul>
+                      <li><a href="./faq.html" target="_blank">Help</a></li>
+                      <li><a href="./terms.html" target="_blank">Terms & Conditions</a></li>
+                      <li><a href="./faq.html" target="_blank">Faq</a></li>
+                    </ul>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 width50">
+              <div class="footer-contents">
+                <h4>Contact</h4>
+                <div class="social">
+                  <ul>
+                    <li><span><i class="fa-solid fa-location-dot"></i></span><a href="#footer">123, Main Street, Anytown, ST 12345</a></li>
+                    <li><span><i class="fa-solid fa-phone"></i></span><a href="#footer">Phone: 01234567897</a></li>
+                    <li><span><i class="fa-solid fa-envelope"></i></span><a href="#footer">Email: hello@example.com</a></li>
+                  </ul>
+                  <p id="social-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, illo.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 grid-it-center">
+              <div class="footer-contents">
+                <h4>Delivery Charges</h4>
+                <div class="schedule">
+                  <ul>
+                    <li><span><i class="fa-solid fa-truck"></i></span><a href="#footer">Dhaka - 30BDT</a></li>
+                    <li><span><i class="fa-solid fa-truck"></i></span><a href="#footer">Outside Dhaka : 50BDT</a></li>
+                    <li><span><i class="fa-solid fa-truck"></i></span><a href="#footer">Outside Bangladesh : 3000BDT</a></li>
+                  </ul>
+                </div>
+                <div class="btnn">
+                  <button><a href="#ad"><span><i class="fa-solid fa-angle-up "></i></span></a></button>
+                </div>
+              </div>
+            </div>
+            <div class="branding">
+              <h4 class="magnet">.AURORA.</h4>
+            </div>
+          </div>
+        </div>
+       </section>
+      <!-- copyright section -->
+       <section id="copyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="copyright-contents">
+                <div class="copyright-texts">
+                  <span><i class="fa-regular fa-copyright"></i></span>
+                  <p>Copyright 2025. All rights reserved. Designed by <a href="https://github.com/NirobSaha420" target="_blank">Nirob Saha</a></p>
+                </div>
+                <div class="copyright-icons">
+                  <ul>
+                    <li><a href="#footer"><span><i class="fa-brands fa-facebook-f magnet"></i></span></a></li>
+                    <li><a href="#footer"><span><i class="fa-brands fa-whatsapp magnet"></i></span></a></li>
+                    <li><a href="#footer"><span><i class="fa-brands fa-instagram magnet"></i></span></a></li>
+                    <li><a href="#footer"><span><i class="fa-brands fa-linkedin-in magnet"></i></span></a></li>
+                    <li><a href="#footer"><span><i class="fa-brands fa-x-twitter magnet"></i></span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       </section>
+      <!-- copyright section -->
+      <!-- footer -->
+
+
+
+
+    <!-- Bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <!-- Gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Shery js -->
+    <script  type="text/javascript"  src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+    <!-- Custom JavaScript link -->
+    <script src="./js/custom.js"></script>
+    <script>
+        // Size selection functionality
+        const sizeOptions = document.querySelectorAll('.size-option');
+        
+        sizeOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove active class from all options
+                sizeOptions.forEach(opt => opt.classList.remove('active'));
+                
+                // Add active class to clicked option
+                this.classList.add('active');
+            });
+        });
+
+      var loader = document.getElementById("preloader")
+
+      window.addEventListener("load", function(){
+        loader.style.display = "none";
+      })
+    </script>
+</body>
+</html>
