@@ -54,6 +54,7 @@ a{
     width: 100vw;
     height: 100vh;
     background: var(--Clor-white) url(../images/preloader.gif) no-repeat center center;
+    background-size: 50%;
     position: fixed;
     z-index: 9999;
 }
@@ -201,7 +202,6 @@ a{
     }
     
     nav ul {
-        margin-top: 15px;
         justify-content: center;
     }
     

@@ -1,5 +1,6 @@
 /* for small devices, mobile */
 @media (max-width: 425px){
+    /* mouse follower destroyer */
     .mousefollower { 
         display: none !important;
         opacity: 0 !important;
@@ -10,6 +11,15 @@
         opacity: 0 !important;
         pointer-events: none !important;
     }
+    /* mouse follower destroyer */
+    /* magnet destroyer */
+    #banner h1{
+        transform: translate(0) !important;
+    }
+    .left-sidebar h4{
+        transform: translate(0) !important;
+    }
+    /* magnet destroyer */
     #nav{
         padding: 2% 6%;
     }
@@ -42,6 +52,7 @@
         }
     }
     #banner .container .banner-contents h1{
+        font-size: 5vw;
         font-weight: 800;
         letter-spacing: .5vw;
         -webkit-text-stroke: 1.5px var(--Clor-theme1);
@@ -55,7 +66,7 @@
         }
     }
     .main .left-sidebar{
-        width: 36%;
+        width: 28%;
         & > .sticky-container > h4{
             font-size: 2.5vw;
             padding: 2vw 0 1.5vw 0;
@@ -86,14 +97,19 @@
     }
     .main .left-sidebar .lists ul{
         padding: 0;
-        margin: 0 0vw 2vw 4vw;
+        margin: 0 0vw 2vw 3vw;
+        & > .f-li-r{
+            margin-bottom: -2vw;
+        }
         & > li{
-            margin-bottom: 1.5vw;
+            margin-bottom: -2vw;
         }
         & > li > a{
-            font-size: 2.3vw;
+            font-size: 1.8vw;
             &::before{
                 height: 1px;
+                width: 40%;
+                right: -35%;
             }
             & > span{
                 margin-right: 1vw;
@@ -101,13 +117,12 @@
         }
     }
     .main .left-sidebar .lists ul .ul-2 li{
-        height: 3vw;
         &:hover{
             transform: translateX(10px);
         }
         & > a{
             margin-left: 2vw;
-            font-size: 2vw;
+            font-size: 1.7vw;
             &::before{
                 width: 2vw;
                 height: 1px;
@@ -118,7 +133,7 @@
         }
     }
     .main .main-contents{
-        width: 60%;
+        width: 68%;
     }
     .main .main-contents .search-bar .navbar .input-group a{ /*bootstrap search bar*/
         border: 1px solid var(--Clor-theme1);
@@ -137,9 +152,6 @@
                 height: 1px;
             }
     }
-    .main .main-contents .cards .last-c{
-        /* width: 50% !important; */
-    }
     .main .main-contents .cards{
         justify-content: space-between;
         border-radius: 5px;
@@ -150,19 +162,57 @@
         }
         & > .card-contents > .card-body > h5{
             font-size: 2.3vw;
-            margin: 2vw 0;
         }
         & > .card-contents > .card-body > p{
             font-size: 2.4vw;
-            margin-bottom: 3vw;
+            margin-bottom: 0;
         }
-        & > .card-contents > .card-body > .btnn{
-            margin-bottom: 2vw;
-            font-size: 2vw;
-            & > button{
-                padding: 1.2vw 5vw;
+        & > .card-contents > .card-body > .btnns{
+            width: 100%;
+            align-items: center;
+            align-content: center;
+            align-self: center;
+            justify-content: space-between;
+            & > .btnn > button{
+                padding: 1vw 2.2vw;
+                transition: .3s ease;
+            }
+            & > .btnn > button > a{
+                font-size: 2vw;
+                display: block;
             }
         }
+    }
+    .color-section {
+        margin: 1.5vw 0 2.5vw 0;
+    }
+    
+    .color-options {
+        gap: 2.5vw;
+    }
+    
+    .color-option {
+        width: 2.8vw;
+        height: 2.8vw;
+    }
+    
+    .color-option:hover {
+        transform: translateY(-.3vw);
+    }
+    
+    .color-option.active {
+        transform: scale(1.15);
+        border: 1px solid white;
+        box-shadow: 0 0 0 1.5px var(--Clor-theme1), 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .color-option .tooltip {
+        top: 150%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: .5vw 1vw;
+        font-size: 1vw;
+        white-space: nowrap;
     }
     #footer .footer-contents{
         & > h4{
@@ -185,7 +235,7 @@
             border-radius: 5px;
         }
         & > .btnn > button{
-            padding: .5vw 2vw;
+            padding: .5vw 1.5vw;
             & > a > span{
                 font-size: 3vw;
             }
@@ -223,7 +273,160 @@
     #footer{
         padding: 0;
         & > .container > .row > .branding > h4{
-            font-size: 10vw;
+            -webkit-text-stroke: 1px var(--Clor-theme2);
         } 
     }
+
+    /* product html */
+    .product-main .product-details .heading{
+        & > .product-title{
+            font-size: 5vw;
+            font-weight: 700;
+        }
+        & > a{
+            font-size: 6vw;
+        }
+    }
+    .product-main .product-details .product-price{
+        font-size: 5vw;
+    }
+    .product-main .product-details .product-rating{
+        & > .stars{
+            font-size: 3vw;
+        }
+        & > .rating-count{
+            font-size: 10px;
+        }
+    }
+    .product-main .product-details .product-description{
+        font-size: 3vw;
+    }
+    .product-main .product-details .options-section{
+        & > h3{
+            font-size: 3.8vw;
+        }
+        & > .color-options{
+            gap: 8vw;
+            & > .color-option{
+                width: 7vw;
+                height: 7vw;
+            }
+        }
+        & > .size-options{
+            gap: 4vw;
+            & > .size-option{
+                font-size: 3vw;
+                width: 10vw;
+                height: 10vw;
+            }
+        }
+    }
+    .product-main .product-details .action-buttons{
+        gap: 7vw;
+        & > .add-to-cart{
+            font-size: 3.3vw;
+            padding: 3vw 6vw;
+        }
+        & > .wishlist{
+            font-size: 3.3vw;
+            padding: 3vw 6vw;
+        }
+    }
+    .product-main #description .des-contents{
+        & > h4{
+            font-size: 4vw;
+        }
+        & > .details > ul > li{
+            font-size: 3vw;
+            margin-bottom: 2vw;
+        } 
+    }
+    .product-main .related-products{
+        & > .section-header{
+            & > h2{
+                font-size: 4vw;
+            }
+            & > a{
+                font-size: 3.9vw;
+            }
+        }
+    }
+    .product-main .products-grid{
+        gap: 14vw;
+        & > .product-card > .card-content{
+            padding: 5vw;
+            & > h3{
+                font-size: 4vw;
+            }
+            & > .card-price{
+                font-size: 4vw;
+                margin-bottom: 2vw;
+            }
+            & > .card-rating > .stars{
+                font-size: 3vw;
+                margin-bottom: 3vw;
+            }
+            & > .card-action{
+                & > button{
+                    font-size: 3.2vw;
+                    transform: translate(0) !important;
+                }
+            }
+        }
+    }
+    /* product html */
+
+    /* faq */
+    #faq .container{
+        max-width: 90vw;
+    }
+    #faq .accordion-button{
+        font-size: 3.5vw;
+    }
+    #faq .accordion-body{
+        font-size: 3vw;
+    }
+    #faq .btnn button{
+        transform: translate(0) !important;
+        padding: 2vw 6vw;
+        & > a{
+            font-size: 3.5vw;
+            display: block;
+        }
+    }
+    /* faq */
+
+    /* terms */
+    .terms-main .page-title{
+        & > h1{
+            font-size: 6vw;
+        }
+        & > p{
+            font-size: 3vw;
+        }
+    }
+    .terms-main .toc-container{
+        & > .last-updated{
+            & > p{
+                font-size: 3vw;
+                margin-bottom: 2vw;
+            }
+        }
+        & > .toc-section{
+            & > h2{
+                font-size: 5vw;
+            }
+            & > p{
+                font-size: 2.4vw;
+                padding: 0 2vw;
+            }
+            & > ul{
+                margin-top: 3vw;
+                & > li{
+                    font-size: 2.5vw;
+                }
+            }
+        }
+    }
+    /* terms */
 }

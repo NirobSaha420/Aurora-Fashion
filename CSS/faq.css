@@ -52,6 +52,7 @@ a{
     width: 100vw;
     height: 100vh;
     background: var(--Clor-white) url(../images/preloader.gif) no-repeat center center;
+    background-size: 50%;
     position: fixed;
     z-index: 9999;
 }
@@ -344,3 +345,13 @@ a{
 }
 /* copyright section */
 /* footer */
+
+@media (max-width: 425px){
+    #banner{
+        padding: 10vw 0;
+    }
+    #banner .container .banner-contents h1{
+        font-size: 12vw !important;
+        margin-top: 10vw;
+    }
+}

@@ -55,6 +55,7 @@ a{
     width: 100vw;
     height: 100vh;
     background: var(--Clor-white) url(../images/preloader.gif) no-repeat center center;
+    background-size: 50%;
     position: fixed;
     z-index: 9999;
 }
@@ -409,7 +410,7 @@ a{
     flex: 1;
     background: white;
     color: var(--Clor-theme1);
-    border: 2px solid #4a6cf7;
+    border: 2px solid var(--Clor-theme1);
     padding: 16px;
     font-size: 16px;
     font-weight: 600;
@@ -453,7 +454,7 @@ a{
 }
 
 .related-products {
-    margin: 50px 0;
+    margin: 6vw 0;
 }
 
 .section-header {
@@ -567,7 +568,7 @@ a{
 .wishlist-btn {
     background: var(--Clor-white);
     color: var(--Clor-theme1);
-    border: 1px solid #4a6cf7;
+    border: 1px solid var(--Clor-theme1);
     flex: 1;
     display: flex;
     align-items: center;
@@ -733,7 +734,6 @@ a{
     }
     
     nav ul {
-        margin-top: 15px;
         justify-content: center;
     }
     
