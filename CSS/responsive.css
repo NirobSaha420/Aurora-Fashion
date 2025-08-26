@@ -1,5 +1,19 @@
 /* for small devices, mobile */
 @media (max-width: 425px){
+    *{
+        &::selection{
+            color: var(--Clor-white);
+            background-color: var(--Clor-black);
+        }
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: monospace, sans-serif, serif;
+        --Clor-black: #000;
+        --Clor-white: #fff;
+        --Clor-theme1: #A16D28;
+        --Clor-theme2: #eee;
+    }
     /* mouse follower destroyer */
     .mousefollower { 
         display: none !important;
@@ -18,6 +32,15 @@
     }
     .left-sidebar h4{
         transform: translate(0) !important;
+    }
+    .btnn button{
+        transform: translate(0) !important;
+    }
+    ul li{
+        transform: translate(0) !important;
+        & > a{
+            transform: translate(0) !important;
+        }
     }
     /* magnet destroyer */
     #nav{
@@ -51,17 +74,20 @@
             padding: 1.5vw;
         }
     }
+    #banner{
+        padding: 40vh 0;
+    }
     #banner .container .banner-contents h1{
-        font-size: 5vw;
-        font-weight: 800;
-        letter-spacing: .5vw;
-        -webkit-text-stroke: 1.5px var(--Clor-theme1);
+        font-size: 6.7vw;
+        font-weight: 900;
+        letter-spacing: .1vw;
+        -webkit-text-stroke: 1px var(--Clor-theme1);
     }
     .banner-contents .para{
         & > p{
             font-size: 2.5vw;
             font-weight: 600;
-            letter-spacing: .1vw;
+            letter-spacing: .3vw;
             -webkit-text-stroke: .5px var(--Clor-theme2);
         }
     }
@@ -264,6 +290,7 @@
             font-size: 1.8vw;
         }
         & > .copyright-icons{
+            padding: 3.2vw 0 3vw 0;
             & > ul > li > a > span{
             font-size: 2.4vw;
             font-weight: 700;
@@ -429,4 +456,359 @@
         }
     }
     /* terms */
+}
+
+/* for medium devices, tab */
+@media (min-width: 425.1px) and (max-width: 768px){
+    .container{
+        max-width: 90%;
+    }
+    .nav-contents .brand span{
+        font-size: 2.2vw;
+    }
+    .nav-contents .nav-con2 .nav-links ul li{
+        margin-right: 4vw;
+        & > a{
+            font-size: 2vw;
+        }
+    }
+    .nav-contents .nav-con3 .cart{
+        & > span{
+            font-size: 2vw;
+        }
+    }
+    .nav-contents .nav-con3 .help-a{
+        font-size: 2vw;
+    }
+
+    #ad{
+        padding: 8vw 0 0 0;
+        & > .row > .col-lg-12 > h4{
+            font-size: 3vw;
+            -webkit-text-stroke: .6px #000;
+        }
+    }
+    #banner{
+        padding: 38vh 0;
+    }
+    #banner .container .banner-contents h1{
+        font-size: 6vw;
+        font-weight: 900;
+        letter-spacing: .1vw;
+        -webkit-text-stroke: 1px var(--Clor-theme1);
+    }
+    .banner-contents .para{
+        & > p{
+            font-size: 1.8vw;
+            -webkit-text-stroke: .5px var(--Clor-theme2);
+        }
+    }
+    .main .left-sidebar{
+        & > .sticky-container > h4{
+            font-size: 2.3vw;
+            &::before{
+                height: 1px;
+            }
+            & > span{
+                margin-top: .35vw;
+            }
+        }
+        & > .sticky-container > .copyright-icons{
+            & > h4{
+                font-size: 2.2vw;
+                margin-top: 2vw;
+                & > span{
+                    font-size: 2vw;
+                }
+                &::after{
+                height: 1px;
+            }
+            }
+            & > ul > li{
+                margin: 0;
+                & > a > span{
+                    font-size: 1.6vw;
+                }
+            }
+        }
+    }
+    .main .left-sidebar .lists ul{
+        padding: 0;
+        margin: 0 0vw 2vw 2vw;
+        & > li > a{
+            font-size: 1.8vw;
+            &::before{
+                height: 1px;
+                width: 40%;
+                right: -35%;
+            }
+            & > span{
+                margin-right: 1vw;
+            }
+        }
+    }
+    .main .left-sidebar .lists ul .ul-2 li{
+        &:hover{
+            transform: translateX(10px);
+        }
+        & > a{
+            margin-left: 2vw;
+            font-size: 1.6vw;
+            &::before{
+                width: 2vw;
+                height: 1px;
+                top: 50%;
+                right: 100%;
+                transform: translate(-50%, 50%);
+            }
+        }
+    }
+
+    .main .main-contents{
+        width: 68%;
+    }
+    .main .main-contents .search-bar .navbar .input-group a{ /*bootstrap search bar*/
+        border: 1px solid var(--Clor-theme1);
+        border-right: 2px solid var(--Clor-theme1);
+        & > .input-group-text > span{
+            font-size: 2vw;
+        }
+    }
+    .main .main-contents .form-control{ /*bootstrap search bar*/
+        font-size: 2.3vw;
+    }
+    .main .main-contents .main-con-headers{
+        font-size: 3vw;
+        margin: 2vw 0 3vw 0;
+            &::after{
+                height: 1px;
+            }
+    }
+    .main .main-contents .cards{
+        justify-content: space-between;
+        border-radius: 5px;
+        & > .card-contents{
+            box-shadow: .5px .5px 10px #a0a0a0;
+            width: 45%;
+            margin: 0 2.5% 5vw 2.5%;
+        }
+        & > .card-contents > .card-body > h5{
+            font-size: 2.3vw;
+        }
+        & > .card-contents > .card-body > p{
+            font-size: 2.4vw;
+            margin-bottom: 0;
+        }
+        & > .card-contents > .card-body > .btnns{
+            width: 100%;
+            align-items: center;
+            align-content: center;
+            align-self: center;
+            justify-content: space-between;
+            & > .btnn > button{
+                padding: 1vw 2.2vw;
+                transition: .3s ease;
+            }
+            & > .btnn > button > a{
+                font-size: 2vw;
+                display: block;
+            }
+        }
+    }
+    .color-section {
+        margin: 1.5vw 0 2.5vw 0;
+    }
+    
+    .color-options {
+        gap: 2.5vw;
+    }
+    
+    .color-option {
+        width: 2.8vw;
+        height: 2.8vw;
+    }
+    
+    .color-option:hover {
+        transform: translateY(-.3vw);
+    }
+    
+    .color-option.active {
+        transform: scale(1.15);
+        border: 1px solid white;
+        box-shadow: 0 0 0 1.5px var(--Clor-theme1), 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .color-option .tooltip {
+        top: 150%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: .5vw 1vw;
+        font-size: 1vw;
+        white-space: nowrap;
+    }
+
+    /* product html */
+    .product-main .product-details .heading{
+        & > .product-title{
+            font-size: 4.7vw;
+        }
+        & > a{
+            font-size: 4.6vw !important;
+        }
+    }
+    .product-main .product-details .product-price{
+        font-size: 3.6vw;
+    }
+    .product-main .product-details .product-rating{
+        & > .stars{
+            font-size: 2.2vw;
+        }
+        & > .rating-count{
+            font-size: 12px;
+        }
+    }
+    .product-main .product-details .product-description{
+        font-size: 3vw;
+    }
+    .product-main .product-details .options-section{
+        & > h3{
+            font-size: 3.6vw;
+        }
+        & > .color-options{
+            gap: 8vw;
+            & > .color-option{
+                width: 5.8vw;
+                height: 5.8vw;
+            }
+        }
+        & > .size-options{
+            gap: 4vw;
+            & > .size-option{
+                font-size: 2.8vw;
+                width: 8vw;
+                height: 8vw;
+            }
+        }
+    }
+    .product-main .product-details .action-buttons{
+        gap: 6vw;
+        & > .add-to-cart{
+            font-size: 3vw;
+            padding: 3vw 6vw;
+        }
+        & > .wishlist{
+            font-size: 3vw;
+            padding: 3vw 6vw;
+        }
+    }
+    .product-main #description .des-contents{
+        & > h4{
+            font-size: 3.6vw;
+        }
+        & > .details > ul > li{
+            font-size: 2.6vw;
+            margin-bottom: 2vw;
+        } 
+    }
+    .product-main .related-products{
+        & > .section-header{
+            & > h2{
+                font-size: 3.6vw;
+            }
+            & > a{
+                font-size: 3.3vw;
+            }
+        }
+    }
+    .product-main .products-grid{
+        /* gap: 14vw; */
+        & > .product-card > .card-content{
+            padding: 6vw;
+            & > h3{
+                font-size: 3.6vw;
+            }
+            & > .card-price{
+                font-size: 3.6vw;
+                margin-bottom: 2vw;
+            }
+            & > .card-rating > .stars{
+                font-size: 2.3vw;
+                margin-bottom: 3vw;
+            }
+            & > .card-action{
+                & > button{
+                    font-size: 3vw;
+                    transform: translate(0) !important;
+                }
+            }
+        }
+    }
+    /* product html */
+
+    #footer .footer-contents{
+        & > h4{
+            font-size: 3vw;
+        }
+        & > p{
+            font-size: 3vw;
+            text-align: center;
+        }
+        & > .social > #social-p{
+            font-size: 2vw;
+        }
+        & > .img{
+            display: flex;
+            justify-content: center;
+        }
+        & > .img > img{
+            width: 40%;
+            border-radius: 5px;
+        }
+    }
+    #footer .footer-contents ul li{
+        font-size: 2.3vw;
+    }
+    #footer .width50{
+        width: 50%;
+        margin: 5vw 0;
+    }
+    #footer .grid-it-center{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3vw;
+    }
+    #copyright .copyright-contents{
+        & > .copyright-texts{
+            padding: 4vw 0 3vw 0;
+            align-items: center;
+            & > span{
+                font-size: 1.8vw;
+            }
+        }
+        & > .copyright-texts > p{
+            font-size: 1.7vw;
+        }
+        & > .copyright-icons{
+            padding-top: 3vw;
+            & > ul > li > a > span{
+            font-size: 2vw;
+            }
+        }
+    }
+
+    /* faq sub navs */
+    #faq .accordion-button{
+        font-size: 2vw;
+    }
+    #faq .accordion-body{
+        font-size: 1.5vw;
+    }
+    .faq-banner{
+        padding: 15vw !important;
+    }
+    .faq-banner .banner-contents h1{
+        font-size: 8vw !important;
+        letter-spacing: 1vw !important;
+    }
+    /* faq sub navs */
 }

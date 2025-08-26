@@ -355,3 +355,10 @@ a{
         margin-top: 10vw;
     }
 }
+@media (min-width: 425.1px) and (max-width: 768px){
+    #footer .footer-contents .btnn{
+        & > button{
+            padding: 1vw 2vw;
+        }
+    }
+}
